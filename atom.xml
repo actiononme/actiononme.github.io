@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://actiononme.github.io</id>
-    <title>How To Become A Hacker</title>
-    <updated>2020-11-29T12:18:45.802Z</updated>
+    <title>My Litte Web Site</title>
+    <updated>2020-11-29T12:26:06.896Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://actiononme.github.io"/>
     <link rel="self" href="https://actiononme.github.io/atom.xml"/>
-    <subtitle>一个倾向于成为一个Hacker级别的人，正在努力，或许那就是方向</subtitle>
+    <subtitle>生活....</subtitle>
     <logo>https://actiononme.github.io/images/avatar.png</logo>
     <icon>https://actiononme.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, How To Become A Hacker</rights>
+    <rights>All rights reserved 2020, My Litte Web Site</rights>
     <entry>
         <title type="html"><![CDATA[简单的.......]]></title>
         <id>https://actiononme.github.io/post/jian-dan-de/</id>

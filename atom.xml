@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://actiononme.github.io</id>
     <title>My Litte Web Site</title>
-    <updated>2020-12-24T02:46:59.577Z</updated>
+    <updated>2020-12-24T04:26:17.571Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://actiononme.github.io"/>
     <link rel="self" href="https://actiononme.github.io/atom.xml"/>
@@ -10,6 +10,15 @@
     <logo>https://actiononme.github.io/images/avatar.png</logo>
     <icon>https://actiononme.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, My Litte Web Site</rights>
+    <entry>
+        <title type="html"><![CDATA[感受别人的文章再多，都没有自己写的好，无论是写作，又或者是写程式]]></title>
+        <id>https://actiononme.github.io/post/gan-shou-bie-ren-de-wen-zhang-zai-duo-du-mei-you-zi-ji-xie-de-hao-wu-lun-shi-xie-zuo-you-huo-zhe-shi-xie-cheng-shi/</id>
+        <link href="https://actiononme.github.io/post/gan-shou-bie-ren-de-wen-zhang-zai-duo-du-mei-you-zi-ji-xie-de-hao-wu-lun-shi-xie-zuo-you-huo-zhe-shi-xie-cheng-shi/">
+        </link>
+        <updated>2020-12-24T03:15:01.000Z</updated>
+        <content type="html"><![CDATA[<p>旁边的人都不在了，只剩下了自己一个人，在solo，独奏，没有任何人陪伴的独奏，没有你追我赶，也没有，更没有任何人会说出来的判断，更加没有人，或者我不是很希望别人来评判，判断我的生活，只是在某些层面上，让我怀念到了以前，有那么多的人陪伴，还有不同的人在一起有上进心的日子，你追我赶的日子，有时候还会分个第一第二出来，现在呢，这些都没了，只有成为世界上最好的，或者说是最为有能力的人，才可以说是到达了一种状态上的第一，而不是只是自己单单的一个人在一个人生活的环境里面，虽然世界第一，第几的位置早就被别人抢去了，在网络上各种错综复杂的人际交往关系中，很需要做出某种类别的分类，以防止自身被它们给同化了，又或者被其拉低智商，这是很有必要的做法，以及总结经验，认识认准一个hacker的水准，在此先不提及cracker，同样会拉低整体智商水准，hacker判断的唯一准则，一是开源的作品程式，二是维护的文档类型类别，还有文章的是否长期性质的维护，再有就是评判其日常生活活动，从这些和这几点上面可以很好的评判一个自身hacker行为或者类似的行为准则的人是否是一个hacker，同时在生活习惯中，以及在一个hacker日常工作状态中，很可以看出这个hacker，或者这个人是否是一个hacker，是否在不断的超越自己和完善自己，以及完善自己原创的作品，而不是只是一味的单单标榜自身，再有就是其他方面涉及接触到的人员，这些人员无非就是甚至都不明白自身想要做些什么，只是一味的往一个领域中扎了进去，其他的什么也都没有想过，这些人员的接触给我的感受就是极为的不负责任，同时自身也并不明白自己在做些什么，说白了就是扯皮和吹水的，在任何其他行业领域，我是真的没有看到过有其他任何领域的人员在一些争论过程中是超过这个行业的，在低级水准也好，高级创作水平中也好，整体的性质水平的，都到了一种极低的状况下，各个领域的人都在争论不休，而这些都没有自己去完善自己技能来的痛快，也没有自身深入进去的过程来的痛快，同时也没有去完善自己的作品获得到的成果来的痛快，说到底都是扯皮了，而且自身也是比以往的话啰嗦的多了，不再像是从前的自己了，不会去计较别人的说词，而是自顾自的在完善自身，创作出自己的成果，尝试去做出不同的补救和成就，而不是在某些地方夸夸其谈，毫无意义</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[My Head]]></title>
         <id>https://actiononme.github.io/post/my-head/</id>

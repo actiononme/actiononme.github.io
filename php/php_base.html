@@ -1,0 +1,384 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>
+        PHP 语言基础
+    </title>
+    <style>
+        #home {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <marquee>信息安全 SFW-actiononme</marquee>
+    <hr>
+    <div id="home">
+        <h5>
+            <p>PHP 语言基础</p>
+        </h5>
+    </div>
+    <hr>
+    <a href="../php.html">home</a>
+    <p>一. PHP的标记风格</p>
+    <b>
+        1. XML风格
+        <pre>
+            <code>
+                &lt;?php
+                    echo "这是XML风格的标记";
+                ?&gt;
+            </code>
+        </pre>
+    </b>
+    <b>
+        2. 脚本风格
+        <pre>
+            <code>
+                &lt;script language="php"&gt;
+                    echo '这是脚本风格的标记';
+                &lt;/script&gt;
+            </code>
+        </pre>
+    </b>
+    <b>
+        3. 简短风格
+        <pre>
+            <code>
+                &lt;? echo '这是简短风格的标记';?&gt;
+            </code>
+        </pre>
+    </b>
+    <b>
+        4. ASP风格
+        <pre>
+            <code>
+                &lt;%
+                    echo '这是ASP风格的标记';
+                %&gt;
+            </code>
+        </pre>
+    </b>
+    <b>涚明:使用简短风格和ASP风格前,需要在php.ini中先进行配置,打开php.ini文件，将short_open_tag和asp_tags都设置为On,重启Apache服务器即可.</b>
+    <p>二. PHP注释的应用</p>
+    <b>
+        1. 单行注释 (//),来源于C++语法格式.
+        <pre>
+            <code>
+                &lt;?php
+                    //这是写在PHP语句上方的单行注释
+                    echo '使用 C++风格的注释';
+                ?&gt;
+            </code>
+        </pre>
+    </b>
+    <b>
+        2. 多行注释 (/*...*/)
+        <pre>
+            <code>
+                &lt;?php
+                    /*
+                    $a = 1;
+                    $b = 2;
+                    echo ($a + $b);
+                    */
+                    echo 'PHP的多行注释';
+                ?&gt;
+            </code>
+        </pre>
+    </b>
+    <b>
+        3. #风格的注释
+        <pre>
+            <code>
+                &lt;?php
+                    echo '这是#风格的注释';       #这是#风格的单行注释
+                ?&gt;
+            </code>
+        </pre>
+        注意: 单行注释中的内容不要出现 "?>" 标志,否则解释器会认为php脚本到此已结束.如下
+        <pre>
+            <code>
+                &lt;?php
+                    echo '这样会出错的!!!'    //不会看到?>会看到
+                ?&gt;
+            </code>
+        </pre>
+    </b>
+    <p>三. PHP的数据类型,标量数据类型</p>
+    <b>
+        涚明: PHP 中的变量的类型通常不是由程序员决定的，确切的涚，是php根据该变量使用的上下文在运行时决定的.
+        <pre>
+        标量数据类型: 是数据结构中最基本的单元,只能存储一个数据,php中标量数据类型包括4种.
+            boolean (布尔型)   =>   最简单的类型,只有两个值: 真 (true)和假(flase)
+            string (字符串型)  =>    字符串就是连续的字符序列,可以是计算机所能表示的一切字符的集合.
+            integer (整型)    =>    整型数据类型用于存储整数.
+            float (浮点型)     =>   浮点型类型用于存储小数.
+        </pre>
+    </b>
+    <p>1. 布尔型 (boolean)</p>
+    <b>
+        <pre>
+            <code>
+                &lt;?php
+                    $boo = true;
+                    if($boo == true)
+                        echo '变量$boo 为真!';
+                    else
+                        echo '变量$boo 为假!';
+                ?&gt;
+            </code>
+        </pre>
+        结果为: 变量$boo 为真!<br>
+        注意: 在PHP中，不是只有false值才为假，一些特殊情况下，boolean值也被认为是false，这些特殊情况有0,0.0,"0",空白字符串(""),只声明没有赋值的数组等.<br>
+        涚明: "$" 是变量标识符，所有变量都以"$"开头,无论是声明变量还是调用变量,都应使用"$".<br>
+    </b>
+    <p>2. 字符串型 (string)</p>
+    <b>
+        2.1 字符串是连续的字符序列,由数字，字母，符号组成，字符串中的每个字符只占用一个字节，在php中，由3种定义字符串的方式，分别是单引号('),双引号("),和定界符(<<<).
+        <pre>
+            单引号和双引号是经常使用的定义方式，定义格式如下:
+            <code>
+                &lt;?php
+                    $a = '字符串';
+                ?&gt;
+
+                &lt;?php
+                    $a = "字符串";
+                &gt;
+            </code>
+        </pre>
+        2.2 两者不同之处在于，双引号中所包含的变量会自动被替换成实际数值，而单引号中包含的变量则按普通字符输出.
+        <pre>
+            应用单引号和双引号输出同一个变量.
+            <code>
+                &lt;?php
+                    $i = '只会看到一遍';
+                    echo "$i";
+                    echo "&lt;p&gt;";
+                    echo '$i';
+                ?&gt;
+            </code>
+        </pre>
+    </b>
+    <b>
+        2.3 定界符(<<<) 是从php4开始支持的，在使用时后接一个标识符，然后是字符串，最后是同样的标识符结束字符串，定界符的格式如下:
+        <pre>
+            <code>
+                $string = <<< str
+                要输出的字符串
+                str
+            </code>
+            其中,str为指定的标识符
+        </pre>
+    </b>
+    <b>
+        <pre>
+            使用定界符输出变量的值.
+            <code>
+                &lt;?php
+                    $i = '显示该行内容';
+                    echo <<< std
+                    这和双引号没有什么区别,\$i同样可以被输出出来.&lt;p&gt;
+                    std;
+            </code>
+        </pre>
+        注意: 结束标识符必须单独另起一行，且不允许有空格，标识符前后有其他符号或字符时会发生错误.
+    </b>
+    <p>3. 整型 (integer)</p>
+    <b>
+        3.1 输出八进制，十进制，十六进制整数.
+        <pre>
+            <code>
+                &lt;?php
+                    $str1 = 1234567890;
+                    $str2 = 0x1234567890;
+                    $str3 = 01234567890;
+                    $str4 = 01234567;
+                    echo '数字 1234567890 不同进制的输出结果: &lt;p&gt;';
+                    echo '十进制的结果是: '.$str1.'&lt;br&gt;';
+                    echo '十六进制的结果是: '.$str2.'&lt;br&gt;';
+                    echo '八进制的结果是: ';
+                    if($str3 == $str4){
+                        echo '$str3 = $str4 ='.$str3;
+                    }else{
+                        echo '$str3 != str4';
+                    }
+            </code>
+        </pre>
+        注意: 如果给定的数值超出了int型所能表示的最大范围，将会被当作float型处理，这种情况被称为整数溢出，同样，如果表达式的最后运算结果超出了int型范围，也会返回float型,整型数据类型只能包含整数,在32位操作系统中，有效的范围是-2147483648 ~ +2147483647.
+    </b>
+    <p>4. 浮点型 (float)</p>
+    <b>
+        4.1 浮点型数据类型可以用来存储小数，它提供的精度比整数大的多，在64位操作系统中，有效的范围是1.7E-308 ~ 1.7E+308,在php早期版本中，浮点型的标识为double,也叫作双精度浮点数，两者没有区别.
+        <pre>
+            <code>
+                &lt;?php
+                    echo '圆周率的3种书写方法: &lt;p&gt;';
+                    echo '第一种: pi() ='.pi().'&lt;p&gt;';
+                    echo '第二种: 3.14159265359 ='.3.14159265359.'&lt;p&gt;';
+                    echo '第三种: 314159265359E-11 ='.314159265359E-11 .'&lt;p&gt;';
+            </code>
+        </pre>
+        注意: 浮点型的数值只是一个近似值,所以要尽量避免在浮点型数值之间比大小，因为最后的结果往往是不准确的.
+    </b>
+    <p>三. PHP的数据类型,复合数据类型</p>
+    <b>
+        1.复合数据类型包括两种，数组和对象.
+        <pre>
+        array (数组)  => 一组数据类型相同的变量的集合.
+        object (对象) => 对象是类的实例，使用new命令来创建
+        
+            <code>
+                $array = array('value1','value2'...)
+                $array[key] = 'value'
+                $array = array(key1 => value1,key2 => value2)<br>
+                其中，key是数组元素的下标，value是数组下标所对应的元素，以下几种都是正确的声明数组格式.<br>
+                $arr1 = array('This','is','an','example');
+                $arr2 = array(0 => 'php',1 => 'is','the' => 'the','str' => 'best');
+                $arr3[0] = 'tmpname';<br>
+                声明数组后，数组中的元素个数还可以自由更改，只要给数组赋值，数组就会自动增加长度.
+            </code>
+        </pre>
+        2. 对象会在往后文章中概括
+    </b>
+    <p>三. PHP的数据类型,特殊数据类型</p>
+    <b>
+        
+        1. 特殊数据类型包括资源和空值两种.
+        <pre>
+        resource (资源)  =>  资源是一种特殊变量，又叫作句柄，保存到了外部资源的一个引用，资源是通过专门的函数来建立和使用的.
+        null (空值)      =>  特殊的值，表示变量没有值，唯一的值就是null.
+        </pre>
+       <pre>
+            <code>
+
+            </code>
+        </pre>
+        2. resource 关于资源的类型，可以参考PHP手册后门的附录.<br>
+    </b>
+    <b>
+        3. 空值 (null)
+        <pre>
+
+            <code>
+                &lt;?php
+                    echo "变量(\$string1)直接赋值为null: ";
+                    $string1 = null;
+                    $string3 = "str";
+                    if(!isset($string1))
+                        echo "string1 = null";
+                    echo "&lt;p&gt;变量(\$string2)未被赋值: ";
+                    if(!isset($string2))
+                        echo "string2 = null";
+                    echo "&lt;p&gt;被 unset()函数处理过的变量(\$string3): ";
+                    unset($string3);
+                    if(!isset($string3))
+                        echo "string3 = null";
+            </code>
+        </pre>
+        涚明: is_null()函数用于判断变量是否为null,该函数返回一个boolean型,如果变量为null,则返回true,否则返回false,unset()函数用来销毁指定的变量.<br>
+        注意: 从php4开始,unset函数就不再有返回值,所以不要试图获取或输出unset().
+    </b>
+    <p> 三. PHP的数据类型,数据类型转换.</p>
+    <b>
+        <pre>
+            (boolean) => 转换成布尔型 => (boolean)$num,(boolean)$str.
+            (string)  => 转换成字符串型 => (string)$boo,(string)$flo.
+            (integer) => 转换成整型   => (integer)$boo,(integer)$str.
+            (float)   => 转换成浮点型  => (float)$str,(float)$str.
+            (array)   => 转换成数组    => (array)$str.
+            (object)  => 转换成对象    => (object)$str.
+            <code>
+                &lt;?php
+                    $num = '3.1415926r*r';
+                    echo '使用(integer)操作符转换变量$num类型: ';
+                    echo (integer)$num;
+                    echo '&lt;p&gt;';
+                    echo '输出变量$num的值: '.$num;
+                    echo '&lt;p&gt;';
+                    echo '使用settype 函数转换变量$num类型:';
+                    echo settype($num,'integer');
+                    echo '&lt;p&gt;';
+                    echo '输出变量$num的值: '.$num;
+            </code>
+        </pre>
+    </b>
+    <p>三. PHP的数据类型,检测数据类型.</p>
+    <b>
+        <pre>
+            is_bool()  =>  检查变量是否为布尔类型  =>  is_bool(true),is_bool(false).
+            is_string() => 检查变量是否为字符串类型 =>  is_string('string'),is_string(1234).
+            is_float/is_double() => 检查变量是否为浮点型 =>  is_float(3.1415),is_float('3.1415').
+            is_integer/is_int()  => 检查变量是否为整数  =>  is_integer(34),is_integer('34')
+            is_null()  =>  检查变量是否为null  =>  is_null(null).
+            is_array() =>  检查变量是否为数组类型 => is_array($arr).
+            is_object  =>  检查变量是否为对象类型 => is_object($obj).
+            is_numeric() => 检查变量是否为数字或数字组成的字符串 => is_numeric('5'),is_numeric('bccd110').
+            <code>
+                &lt;?php
+                    $bool = "043112345678";
+                    if(is_numeric($bool))
+                        echo "Yes,the \$boo is phone number: $bool!";
+                    else
+                        echo "Sorry,This is an error!";
+            </code>
+        </pre>
+        结果为: Yes,the $boo is a phone number:043112345678!
+    </b>
+    <p>四. 常量,常量的定义和使用</p>
+    <b>
+        1.在PHP中使用define()函数来定义常量,语法格式如下:<br>
+        define(string constant_name,mixed value,case_sensitive=false)，该函数有3个参数.<br>
+        constant_name => 必选参数，指定常量名称，即标识符.<br>
+        value =>  必选参数,指定常量的值.<br>
+        case_sensitive => 可选参数，指定是否大小写敏感，设定为true,表示大小写不敏感.<br>
+        <pre>
+            <code>
+                &lt;?php
+                    define("MESSAGE","我是一名PHP程序员"); 
+                    echo MESSAGE."&lt;p&gt;";
+                    echo Message."&lt;p&gt;";
+                    define("COUNT","我想要怒放的生命",true);
+                    echo COUNT."&lt;p&gt;";
+                    echo Count."&lt;p&gt;";
+                    $name = "count";
+                    echo constant($name)."&lt;p&gt;";
+                    echo(define("MESSAGE"))."&lt;p&gt;";
+                ?&gt;
+            </code>
+        </pre>
+    </b>
+    <p>四. 常量,预定义常量</p>
+    <b>
+        1. PHP中可以使用预定义常量获取PHP中的信息.
+        <pre>
+            __FILE__ => 默认常量,显示php程序的当前文件名.
+            __LINE__ => 默认常量,显示PHP程序的当前行数.
+            PHP_VERSION => 内置常量,显示php程序的版本,如php6.0.0-dev.
+            PHP_OS   => 内置常量,显示PHP解析器的操作系统，如Windows.
+            TRUE     => 该常量是一个真值 (true).
+            FALSE    => 该常量是一个假值 (false).
+            NULL     => 该常量是一个null值.
+            E_ERROR  => 该常量指到最近的错误处.
+            E_WARNING => 该常量指到最近的警告处.
+            E_PARSE  => 该常量指到解析语法有潜在问题处.
+            E_NOTICE => 该常量为发生不寻常处的提示，但不一定是错误处.
+        </pre>
+        涚明: 以E开头的预定义常量用于PHP的错误调试,如需详细了解，请参考error_reporting() 函数.
+        <pre>
+            <code>
+                &lt;?php
+                    echo "当前文件路径: ".__FILE__.
+                    echo "&lt;br&gt;当前行数: ".__LINE__.
+                    echo "&lt;br&gt;当前PHP版本信息: ".PHP_VERSION.
+                    echo "&lt;br&gt;当前操作系统信息: ".PHP_OS.
+                ?&gt;
+            </code>
+        </pre>
+    </b>
+</body>
+
+</html>
